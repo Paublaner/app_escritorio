@@ -82,28 +82,9 @@ public class MovimientoServicio(ICuentaPersistencia cuentaPersistencia, ICategor
         }
 
 
-        Movimiento movimiento = new Movimiento(cuentaId, categoriaId, importe,categoriaResultado.Value.Tipo , fecha, descripcion);
-
-        var resultado = await _movimientoPersistencia.AgregarAsync(movimiento);
-
-        if (resultado.IsFailed)
-        {
-            _logger.LogError("Error al registrar el movimiento para la cuenta {CuentaId}: {Errors}", cuentaId, resultado.Errors);
-        }
-
         decimal nuevoSaldo = cuentaResultado.Value.Saldo;
 
-        if (cuentaResultado.Value.Tipo == Cuenta.TipoCuenta.Credito)
-        {
-            _logger.LogError("No se pueden registrar movimientos en cuentas de tipo crédito");
-            return Result.Fail("No se pueden registrar movimientos en cuentas de tipo crédito");
-        }
-        else if (categoriaResultado.Value.Tipo == Categoria.TipoMovimiento.Gasto && cuentaResultado.Value.Saldo < importe)
-        {
-            _logger.LogError("No hay suficiente saldo en la cuenta {CuentaId} para registrar el movimiento", cuentaId);
-            return Result.Fail("No hay suficiente saldo en la cuenta");
-        }
-        else if (categoriaResultado.Value.Tipo == Categoria.TipoMovimiento.Gasto)
+        if (categoriaResultado.Value.Tipo == Categoria.TipoMovimiento.Gasto)
         {
             nuevoSaldo -= importe;
         }
@@ -111,7 +92,23 @@ public class MovimientoServicio(ICuentaPersistencia cuentaPersistencia, ICategor
         {
             nuevoSaldo += importe;
         }
-        
+
+        if (nuevoSaldo < 0 && cuentaResultado.Value.Tipo != Cuenta.TipoCuenta.Credito)
+        {
+            _logger.LogError("No hay suficiente saldo en la cuenta {CuentaId} para registrar el movimiento", cuentaId);
+            return Result.Fail("No hay suficiente saldo en la cuenta");
+        }
+
+
+        Movimiento movimiento = new Movimiento(cuentaId, categoriaId, importe,categoriaResultado.Value.Tipo , fecha, descripcion);
+
+        var resultado = await _movimientoPersistencia.AgregarAsync(movimiento);
+
+        if (resultado.IsFailed)
+        {
+            _logger.LogError("Error al registrar el movimiento para la cuenta {CuentaId}: {Errors}", cuentaId, resultado.Errors);
+            return Result.Fail("Error al registrar el movimiento"); 
+        }
 
         cuentaResultado.Value.Saldo = nuevoSaldo;
 
