@@ -67,16 +67,9 @@ public class CategoriaServicio(ICategoriaPersistencia categoriaPersistencia, ILo
 
         var todas = resultado.Value;
 
-        foreach (var categoria in todas)
-        {
-            if (categoria.Tipo != tipo)
-            {
-                todas.Remove(categoria);
-            }
-        }
+        var filtradas = todas.Where(c => c.Tipo == tipo).ToList();
 
-        return Result.Ok(todas);
-
+        return Result.Ok(filtradas);
     }
 
     public async Task<Result<List<Categoria>>> ObtenerTodasAsync()

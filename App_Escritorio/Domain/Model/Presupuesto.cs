@@ -8,7 +8,7 @@ public class Presupuesto
 {
     public int Id { get; private set; }
     public int CategoriaId { get; private set; }
-    public decimal Limite { get; private set; }
+    public decimal Limite { get; set; }
     public int Anio { get; private set; }
     public int Mes { get; private set; }
 
