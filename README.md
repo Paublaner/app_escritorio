@@ -49,7 +49,10 @@ App_Escritorio/
 │     ├─ Driven/      ← ICuentaPersistencia, ICategoriaPersistencia, ...
 │     └─ Driving/     ← ICuentaServicio, ICategoriaServicio, ...
 ├─ Application/
-│  └─ CuentaServicio.cs
+│  ├─ CuentaServicio.cs
+│  ├─ CategoriaServicio.cs
+│  ├─ MovimientoServicio.cs
+│  └─ PresupuestoServicio.cs
 ├─ Form1.cs
 └─ Program.cs
 ```
@@ -63,12 +66,37 @@ App_Escritorio/
 | `Movimiento` | Ingreso o gasto asociado a una cuenta y una categoría |
 | `Presupuesto` | Límite de gasto para una categoría en un mes concreto |
 
+## Reglas de negocio
+
+Las reglas viven en los servicios de la capa Application. Todas se comprueban **antes** de escribir nada en la base de datos.
+
+**Cuentas**
+- El nombre es obligatorio y el saldo inicial no puede ser negativo.
+- El saldo solo cambia a través de los movimientos.
+
+**Categorías**
+- El nombre es obligatorio.
+- Cada categoría es de ingreso o de gasto.
+
+**Movimientos**
+- El importe debe ser mayor que cero.
+- La cuenta y la categoría deben existir.
+- El tipo (ingreso o gasto) lo determina la categoría, no se indica a mano.
+- Un gasto resta del saldo y un ingreso suma.
+- Una cuenta no puede quedarse en negativo, **salvo que sea de tipo Crédito**.
+
+**Presupuestos**
+- El límite debe ser mayor que cero y el mes, válido (1–12).
+- Solo se pueden definir para categorías de gasto.
+- Hay un único presupuesto por categoría y mes: si ya existe, se actualiza su límite.
+- Lo gastado se calcula sumando los gastos de la categoría en ese mes.
+
 ## Estado
 
 - [x] Modelos de dominio
 - [x] Puertos driving y driven con `Result`
-- [x] Servicio de cuentas con validaciones
-- [ ] Servicios de categorías, movimientos y presupuestos
+- [x] Servicios de cuentas, categorías, movimientos y presupuestos
+- [ ] Revertir el saldo al eliminar un movimiento
 - [ ] Adaptador de persistencia (base de datos local)
 - [ ] Configuración de la inyección de dependencias
 - [ ] Interfaz: cuentas, movimientos, presupuestos y dashboard
