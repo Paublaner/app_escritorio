@@ -2,7 +2,7 @@ using App_Escritorio.Application;
 using App_Escritorio.Domain.Ports.Driven;
 using App_Escritorio.Domain.Ports.Driving;
 using App_Escritorio.Infrastructure.Driven.Database.Context;
-using App_Escritorio.Infrastructure.EnMemoria;
+using App_Escritorio.Infrastructure.Driven.Database.Adapter;
 using App_Escritorio.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,11 +35,10 @@ namespace App_Escritorio
             services.AddDbContextFactory<PostgresContext>(options =>
                 options.UseNpgsql(configuracion.GetConnectionString("Finanzas")));
 
-            // Persistencia (adaptadores driven). TEMPORAL en memoria: se cambiará por EF Core + PostgreSQL
-            services.AddSingleton<ICuentaPersistencia, CuentaPersistenciaEnMemoria>();
-            services.AddSingleton<ICategoriaPersistencia, CategoriaPersistenciaEnMemoria>();
-            services.AddSingleton<IMovimientoPersistencia, MovimientoPersistenciaEnMemoria>();
-            services.AddSingleton<IPresupuestoPersistencia, PresupuestoPersistenciaEnMemoria>();
+            services.AddTransient<ICuentaPersistencia, CuentaAdapter>();
+            services.AddTransient<ICategoriaPersistencia, CategoriaAdapter>();
+            services.AddTransient<IMovimientoPersistencia, MovimientoAdapter>();
+            services.AddTransient<IPresupuestoPersistencia, PresupuestoAdapter>();
 
 
 

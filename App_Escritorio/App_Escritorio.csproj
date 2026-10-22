@@ -28,8 +28,4 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Infrastructure\Driven\Database\Adapter\" />
-  </ItemGroup>
-
 </Project>

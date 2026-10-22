@@ -483,3 +483,7 @@ $RECYCLE.BIN/
 
 # Configuración local con credenciales
 App_Escritorio/appsettings.json
+
+# Python: entorno virtual del chatbot
+.venv/
+venv/

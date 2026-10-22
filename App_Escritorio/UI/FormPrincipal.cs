@@ -3,6 +3,7 @@ namespace App_Escritorio.UI
     public partial class FormPrincipal : Form
     {
         private readonly Dictionary<Button, UserControl> _vistas;
+        private Button _activo;
 
         public FormPrincipal(ResumenView resumen, CuentasView cuentas, MovimientosView movimientos, CategoriasView categorias, PresupuestosView presupuestos)
         {
@@ -22,6 +23,47 @@ namespace App_Escritorio.UI
                 vista.Dock = DockStyle.Fill;
                 boton.Click += Navegar_Click;
             }
+
+            _activo = btnResumen;
+
+            btnTema.Click += (_, _) => Tema.Alternar();
+            Tema.Cambiado += AplicarTema;
+            FormClosed += (_, _) => Tema.Cambiado -= AplicarTema;
+
+            AplicarTema();
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            Tema.BarraTitulo(this);
+        }
+
+        private void AplicarTema()
+        {
+            panelLateral.BackColor = Estilo.Lateral;
+            PintarMenu();
+
+            btnTema.BackColor = Estilo.Lateral;
+            btnTema.Text = Tema.Oscuro ? "Modo claro" : "Modo oscuro";
+
+            // Las vistas que no se están mostrando también, para que estén listas al navegar
+            Tema.Aplicar(panelContenido);
+
+            foreach (var vista in _vistas.Values)
+            {
+                Tema.Aplicar(vista);
+            }
+
+            Tema.BarraTitulo(this);
+        }
+
+        private void PintarMenu()
+        {
+            foreach (var b in _vistas.Keys)
+            {
+                b.BackColor = b == _activo ? Estilo.LateralActivo : Estilo.Lateral;
+            }
         }
 
         protected override async void OnLoad(EventArgs e)
@@ -40,10 +82,8 @@ namespace App_Escritorio.UI
 
         private async Task MostrarAsync(Button boton)
         {
-            foreach (var b in _vistas.Keys)
-            {
-                b.BackColor = b == boton ? Estilo.LateralActivo : Estilo.Lateral;
-            }
+            _activo = boton;
+            PintarMenu();
 
             var vista = _vistas[boton];
 

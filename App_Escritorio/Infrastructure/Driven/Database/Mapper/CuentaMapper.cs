@@ -15,13 +15,15 @@ public class CuentaMapper
         {
             Id = cuenta.Id,
             Nombre = cuenta.Nombre,
-            Saldo = cuenta.Saldo
+            Saldo = cuenta.Saldo,
+            Tipo = cuenta.Tipo
         };
     }
 
     public static Cuenta ToDomain(CuentaEntity cuentaEntity)
     {
         Cuenta cuenta = new Cuenta(cuentaEntity.Nombre, cuentaEntity.Saldo, cuentaEntity.Tipo);
+        cuenta.Id = cuentaEntity.Id;
 
         return cuenta;
     }

@@ -29,6 +29,7 @@ namespace App_Escritorio.UI
         private void InitializeComponent()
         {
             panelLateral = new Panel();
+            btnTema = new Button();
             btnPresupuestos = new Button();
             btnCategorias = new Button();
             btnMovimientos = new Button();
@@ -42,6 +43,7 @@ namespace App_Escritorio.UI
             // panelLateral
             //
             panelLateral.BackColor = Color.FromArgb(30, 41, 59);
+            panelLateral.Controls.Add(btnTema);
             panelLateral.Controls.Add(btnPresupuestos);
             panelLateral.Controls.Add(btnCategorias);
             panelLateral.Controls.Add(btnMovimientos);
@@ -53,6 +55,22 @@ namespace App_Escritorio.UI
             panelLateral.Name = "panelLateral";
             panelLateral.Size = new Size(200, 760);
             panelLateral.TabIndex = 0;
+            //
+            // btnTema
+            //
+            btnTema.Cursor = Cursors.Hand;
+            btnTema.Dock = DockStyle.Bottom;
+            btnTema.FlatAppearance.BorderSize = 0;
+            btnTema.FlatStyle = FlatStyle.Flat;
+            btnTema.ForeColor = Color.White;
+            btnTema.Location = new Point(0, 712);
+            btnTema.Name = "btnTema";
+            btnTema.Padding = new Padding(20, 0, 0, 0);
+            btnTema.Size = new Size(200, 48);
+            btnTema.TabIndex = 6;
+            btnTema.Text = "Modo oscuro";
+            btnTema.TextAlign = ContentAlignment.MiddleLeft;
+            btnTema.UseVisualStyleBackColor = false;
             //
             // btnPresupuestos
             //
@@ -176,5 +194,6 @@ namespace App_Escritorio.UI
         private Button btnCategorias;
         private Button btnPresupuestos;
         private Panel panelContenido;
+        private Button btnTema;
     }
 }

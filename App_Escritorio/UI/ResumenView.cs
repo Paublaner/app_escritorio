@@ -23,6 +23,10 @@ namespace App_Escritorio.UI
             Estilo.Grid(gridMovimientos);
             gridPresupuestos.CellFormatting += Estilo.ColorearPresupuesto;
             gridMovimientos.CellFormatting += Estilo.ColorearMovimiento;
+
+            Estilo.Marcar(Rol.Secundario, lblMes, lblSaldoTitulo, lblIngresosTitulo, lblGastosTitulo);
+            Estilo.Marcar(Rol.Ingreso, lblIngresosValor);
+            Estilo.Marcar(Rol.Gasto, lblGastosValor);
         }
 
         public async Task CargarAsync()
@@ -68,6 +72,8 @@ namespace App_Escritorio.UI
             lblSaldoValor.Text = saldoTotal.Value.ToString("C2");
             lblIngresosValor.Text = movimientos.Value.Where(m => m.Tipo == Categoria.TipoMovimiento.Ingreso).Sum(m => m.Importe).ToString("C2");
             lblGastosValor.Text = movimientos.Value.Where(m => m.Tipo == Categoria.TipoMovimiento.Gasto).Sum(m => m.Importe).ToString("C2");
+
+            graficoGastos.MostrarDatos(Consultas.GastosPorCategoria(movimientos.Value, categorias.Value));
 
             gridPresupuestos.DataSource = presupuestos.Value;
             Estilo.Ocultar(gridPresupuestos, nameof(FilaPresupuesto.Restante));

@@ -14,13 +14,15 @@ public class CategoriaMapper
         return new CategoriaEntity
         {
             Id = categoria.Id,
-            Nombre = categoria.Nombre
+            Nombre = categoria.Nombre,
+            Tipo = categoria.Tipo
         };
     }
 
     public static Categoria ToDomain(CategoriaEntity categoriaEntity)
     {
         Categoria categoria = new Categoria(categoriaEntity.Nombre, categoriaEntity.Tipo);
+        categoria.Id = categoriaEntity.Id;
         return categoria;
     }
 

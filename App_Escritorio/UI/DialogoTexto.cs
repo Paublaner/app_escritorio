@@ -26,6 +26,9 @@ public static class DialogoTexto
         form.AcceptButton = btnAceptar;
         form.CancelButton = btnCancelar;
 
+        Tema.Aplicar(form);
+        form.Load += (_, _) => Tema.BarraTitulo(form);
+
         return form.ShowDialog(owner) == DialogResult.OK ? txtValor.Text : null;
     }
 }

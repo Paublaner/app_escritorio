@@ -34,7 +34,7 @@ namespace App_Escritorio.UI
             lblLimite = new Label();
             numLimite = new NumericUpDown();
             lblMes = new Label();
-            dtpMes = new DateTimePicker();
+            dtpMes = new SelectorFecha();
             btnDefinir = new Button();
             gridPresupuestos = new DataGridView();
             lblTotal = new Label();
@@ -169,7 +169,7 @@ namespace App_Escritorio.UI
         private Label lblLimite;
         private NumericUpDown numLimite;
         private Label lblMes;
-        private DateTimePicker dtpMes;
+        private SelectorFecha dtpMes;
         private Button btnDefinir;
         private DataGridView gridPresupuestos;
         private Label lblTotal;

@@ -24,6 +24,27 @@ public static class Consultas
             .ToList();
     }
 
+    // Gastos agrupados por categoría de mayor a menor; a partir de la sexta se juntan en "Otros"
+    public static List<(string Nombre, decimal Valor)> GastosPorCategoria(IEnumerable<Movimiento> movimientos, List<Categoria> categorias, int maximo = 6)
+    {
+        var gastos = movimientos
+            .Where(m => m.Tipo == Categoria.TipoMovimiento.Gasto)
+            .GroupBy(m => m.CategoriaId)
+            .Select(g => (Nombre: categorias.FirstOrDefault(c => c.Id == g.Key)?.Nombre ?? "—", Valor: g.Sum(m => m.Importe)))
+            .OrderByDescending(d => d.Valor)
+            .ToList();
+
+        if (gastos.Count <= maximo)
+        {
+            return gastos;
+        }
+
+        var principales = gastos.Take(maximo - 1).ToList();
+        principales.Add(("Otros", gastos.Skip(maximo - 1).Sum(d => d.Valor)));
+
+        return principales;
+    }
+
     public static async Task<Result<List<FilaPresupuesto>>> FilasPresupuestosAsync(IPresupuestoServicio presupuestoServicio, List<Categoria> categorias, int anio, int mes)
     {
         var presupuestos = await presupuestoServicio.ObtenerPorMesAsync(anio, mes);

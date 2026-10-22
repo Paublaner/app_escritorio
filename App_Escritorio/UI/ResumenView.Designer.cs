@@ -43,6 +43,8 @@ namespace App_Escritorio.UI
             tablaInferior = new TableLayoutPanel();
             lblPresupuestos = new Label();
             lblMovimientos = new Label();
+            lblGastosCategoria = new Label();
+            graficoGastos = new GraficoCircular();
             gridPresupuestos = new DataGridView();
             gridMovimientos = new DataGridView();
             tablaTarjetas.SuspendLayout();
@@ -191,13 +193,16 @@ namespace App_Escritorio.UI
             // tablaInferior
             //
             tablaInferior.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tablaInferior.ColumnCount = 2;
-            tablaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tablaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tablaInferior.Controls.Add(lblPresupuestos, 0, 0);
-            tablaInferior.Controls.Add(lblMovimientos, 1, 0);
-            tablaInferior.Controls.Add(gridPresupuestos, 0, 1);
-            tablaInferior.Controls.Add(gridMovimientos, 1, 1);
+            tablaInferior.ColumnCount = 3;
+            tablaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tablaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tablaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tablaInferior.Controls.Add(lblGastosCategoria, 0, 0);
+            tablaInferior.Controls.Add(lblPresupuestos, 1, 0);
+            tablaInferior.Controls.Add(lblMovimientos, 2, 0);
+            tablaInferior.Controls.Add(graficoGastos, 0, 1);
+            tablaInferior.Controls.Add(gridPresupuestos, 1, 1);
+            tablaInferior.Controls.Add(gridMovimientos, 2, 1);
             tablaInferior.Location = new Point(0, 204);
             tablaInferior.Name = "tablaInferior";
             tablaInferior.RowCount = 2;
@@ -206,12 +211,33 @@ namespace App_Escritorio.UI
             tablaInferior.Size = new Size(950, 436);
             tablaInferior.TabIndex = 3;
             //
+            // lblGastosCategoria
+            //
+            lblGastosCategoria.AutoSize = true;
+            lblGastosCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblGastosCategoria.Location = new Point(0, 0);
+            lblGastosCategoria.Margin = new Padding(0);
+            lblGastosCategoria.Name = "lblGastosCategoria";
+            lblGastosCategoria.Size = new Size(177, 21);
+            lblGastosCategoria.TabIndex = 4;
+            lblGastosCategoria.Text = "Gastos por categoría";
+            //
+            // graficoGastos
+            //
+            graficoGastos.Dock = DockStyle.Fill;
+            graficoGastos.Location = new Point(0, 36);
+            graficoGastos.Margin = new Padding(0, 0, 8, 0);
+            graficoGastos.Name = "graficoGastos";
+            graficoGastos.Size = new Size(308, 400);
+            graficoGastos.TabIndex = 5;
+            graficoGastos.TextoVacio = "Sin gastos este mes";
+            //
             // lblPresupuestos
             //
             lblPresupuestos.AutoSize = true;
             lblPresupuestos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblPresupuestos.Location = new Point(0, 0);
-            lblPresupuestos.Margin = new Padding(0);
+            lblPresupuestos.Location = new Point(324, 0);
+            lblPresupuestos.Margin = new Padding(8, 0, 0, 0);
             lblPresupuestos.Name = "lblPresupuestos";
             lblPresupuestos.Size = new Size(169, 21);
             lblPresupuestos.TabIndex = 0;
@@ -221,7 +247,7 @@ namespace App_Escritorio.UI
             //
             lblMovimientos.AutoSize = true;
             lblMovimientos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblMovimientos.Location = new Point(483, 0);
+            lblMovimientos.Location = new Point(641, 0);
             lblMovimientos.Margin = new Padding(8, 0, 0, 0);
             lblMovimientos.Name = "lblMovimientos";
             lblMovimientos.Size = new Size(168, 21);
@@ -231,19 +257,19 @@ namespace App_Escritorio.UI
             // gridPresupuestos
             //
             gridPresupuestos.Dock = DockStyle.Fill;
-            gridPresupuestos.Location = new Point(0, 36);
-            gridPresupuestos.Margin = new Padding(0, 0, 8, 0);
+            gridPresupuestos.Location = new Point(324, 36);
+            gridPresupuestos.Margin = new Padding(8, 0, 8, 0);
             gridPresupuestos.Name = "gridPresupuestos";
-            gridPresupuestos.Size = new Size(467, 400);
+            gridPresupuestos.Size = new Size(301, 400);
             gridPresupuestos.TabIndex = 2;
             //
             // gridMovimientos
             //
             gridMovimientos.Dock = DockStyle.Fill;
-            gridMovimientos.Location = new Point(483, 36);
+            gridMovimientos.Location = new Point(641, 36);
             gridMovimientos.Margin = new Padding(8, 0, 0, 0);
             gridMovimientos.Name = "gridMovimientos";
-            gridMovimientos.Size = new Size(467, 400);
+            gridMovimientos.Size = new Size(309, 400);
             gridMovimientos.TabIndex = 3;
             //
             // ResumenView
@@ -292,5 +318,7 @@ namespace App_Escritorio.UI
         private Label lblMovimientos;
         private DataGridView gridPresupuestos;
         private DataGridView gridMovimientos;
+        private Label lblGastosCategoria;
+        private GraficoCircular graficoGastos;
     }
 }
