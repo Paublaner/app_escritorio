@@ -17,7 +17,7 @@ public class CategoriaServicio(ICategoriaPersistencia categoriaPersistencia, ILo
 
     public async Task<Result<Categoria>> CrearAsync(string nombre, Categoria.TipoMovimiento tipo)
     {
-        if (string.IsNullOrEmpty(nombre))
+        if (string.IsNullOrWhiteSpace(nombre))
         {
             _logger.LogError("El nombre de la categoría es obligatorio");
             return Result.Fail("El nombre de la categoría es obligatorio");
@@ -28,10 +28,27 @@ public class CategoriaServicio(ICategoriaPersistencia categoriaPersistencia, ILo
             _logger.LogError("El tipo de movimiento de la categoría es obligatorio");
             return Result.Fail("El tipo de movimiento de la categoría es obligatorio");
         }
+        
+        var categorias = await _categoriaPersistencia.ObtenerTodasAsync();
 
-        Categoria categoria = new Categoria(nombre, tipo);
+        if (categorias.IsFailed)
+        {
+            _logger.LogError("Error al obtener las categorías");
+            return Result.Fail("Error al obtener las categorías");
+        }
 
-        var resultado = await _categoriaPersistencia.AgregarAsync(categoria);
+        foreach (var categoria in categorias.Value)
+        {
+            if (categoria.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase) && categoria.Tipo == tipo)
+            {
+                _logger.LogError("Ya existe una categoría con el mismo nombre y tipo");
+                return Result.Fail("Ya existe una categoría con el mismo nombre y tipo");
+            }
+        }
+
+        Categoria categoriaCrear = new Categoria(nombre, tipo);
+
+        var resultado = await _categoriaPersistencia.AgregarAsync(categoriaCrear);
 
         if (resultado.IsFailed)
         {
@@ -39,7 +56,7 @@ public class CategoriaServicio(ICategoriaPersistencia categoriaPersistencia, ILo
             return Result.Fail("Error al crear la categoría");
         }
 
-        return Result.Ok(categoria);
+        return Result.Ok(categoriaCrear);
     }
 
     public async Task<Result> EliminarAsync(int id)

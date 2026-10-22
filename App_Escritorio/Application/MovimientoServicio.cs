@@ -20,14 +20,59 @@ public class MovimientoServicio(ICuentaPersistencia cuentaPersistencia, ICategor
 
     public async Task<Result> EliminarAsync(int id)
     {
+
+        var movimientoResultado = await _movimientoPersistencia.ObtenerPorIdAsync(id);
+
+        if (movimientoResultado.IsFailed)
+        {
+            _logger.LogError("Error al obtener el movimiento con id {Id}: {Errors}", id, movimientoResultado.Errors);
+            return Result.Fail("Error al obtener el movimiento");
+        }
+
+        var cuentaResultado = await _cuentaPersistencia.ObtenerPorIdAsync(movimientoResultado.Value.CuentaId);
+
+        if (cuentaResultado.IsFailed)
+        {
+            _logger.LogError("Error al obtener la cuenta con id {CuentaId}: {Errors}", movimientoResultado.Value.CuentaId, cuentaResultado.Errors);
+            return Result.Fail("Error al obtener la cuenta");
+        }
+
+        decimal nuevoSaldo = cuentaResultado.Value.Saldo;
+
+        if (movimientoResultado.Value.Tipo == Categoria.TipoMovimiento.Gasto)
+        {
+            nuevoSaldo += movimientoResultado.Value.Importe;
+        }
+        else if (movimientoResultado.Value.Tipo == Categoria.TipoMovimiento.Ingreso)
+        {
+            nuevoSaldo -= movimientoResultado.Value.Importe;
+        }
+
+        if (nuevoSaldo < 0 && cuentaResultado.Value.Tipo != Cuenta.TipoCuenta.Credito)
+        {
+            _logger.LogError("No se puede eliminar el movimiento {Id}: la cuenta {CuentaId} quedaría con saldo negativo", id, movimientoResultado.Value.CuentaId);
+            return Result.Fail("No se puede eliminar el movimiento: la cuenta quedaría con saldo negativo");
+        }
+
         var resultado = await _movimientoPersistencia.EliminarAsync(id);
 
         if (resultado.IsFailed)
         {
             _logger.LogError("Error al eliminar el movimiento con id {Id}: {Errors}", id, resultado.Errors);
+            return Result.Fail("Error al eliminar el movimiento");
         }
 
-        return resultado;
+        cuentaResultado.Value.Saldo = nuevoSaldo;
+
+        var resultadoActualizarSaldo = await _cuentaPersistencia.ActualizarAsync(cuentaResultado.Value);
+
+        if (resultadoActualizarSaldo.IsFailed)
+        {
+            _logger.LogError("Error al actualizar el saldo de la cuenta {CuentaId}: {Errors}", movimientoResultado.Value.CuentaId, resultadoActualizarSaldo.Errors);
+            return Result.Fail("Error al actualizar el saldo de la cuenta");
+        }
+
+        return Result.Ok();
     }
 
     public async Task<Result<List<Movimiento>>> ObtenerPorCuentaAsync(int cuentaId)
