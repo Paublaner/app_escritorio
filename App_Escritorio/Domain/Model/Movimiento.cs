@@ -6,7 +6,7 @@ namespace App_Escritorio.Domain.Model;
 
 public class Movimiento
 {
-    public int Id { get; private set; }
+    public int Id { get; set; }
     public int CuentaId { get; private set; }
     public int CategoriaId { get; private set; }
     public decimal Importe { get; private set; }

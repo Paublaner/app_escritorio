@@ -6,7 +6,7 @@ namespace App_Escritorio.Domain.Model;
 
 public class Cuenta
 {
-    public int Id { get; private set; }
+    public int Id { get; set; }
     public string Nombre { get; set; } = string.Empty;
     public decimal Saldo { get; set; }
 
