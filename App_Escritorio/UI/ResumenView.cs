@@ -24,9 +24,8 @@ namespace App_Escritorio.UI
             gridPresupuestos.CellFormatting += Estilo.ColorearPresupuesto;
             gridMovimientos.CellFormatting += Estilo.ColorearMovimiento;
 
-            Estilo.Marcar(Rol.Secundario, lblMes, lblSaldoTitulo, lblIngresosTitulo, lblGastosTitulo);
-            Estilo.Marcar(Rol.Ingreso, lblIngresosValor);
-            Estilo.Marcar(Rol.Gasto, lblGastosValor);
+            Estilo.Marcar(Rol.Secundario, lblMes, lblIngresosTitulo, lblGastosTitulo, lblIngresosPie, lblGastosPie);
+            Estilo.Marcar(Rol.Destacado, lblSaldoTitulo, lblSaldoValor, lblSaldoPie);
         }
 
         public async Task CargarAsync()
@@ -69,16 +68,24 @@ namespace App_Escritorio.UI
                 return;
             }
 
+            decimal ingresos = movimientos.Value.Where(m => m.Tipo == Categoria.TipoMovimiento.Ingreso).Sum(m => m.Importe);
+            decimal gastos = movimientos.Value.Where(m => m.Tipo == Categoria.TipoMovimiento.Gasto).Sum(m => m.Importe);
+            decimal balance = ingresos - gastos;
+
             lblSaldoValor.Text = saldoTotal.Value.ToString("C2");
-            lblIngresosValor.Text = movimientos.Value.Where(m => m.Tipo == Categoria.TipoMovimiento.Ingreso).Sum(m => m.Importe).ToString("C2");
-            lblGastosValor.Text = movimientos.Value.Where(m => m.Tipo == Categoria.TipoMovimiento.Gasto).Sum(m => m.Importe).ToString("C2");
+            lblSaldoPie.Text = cuentas.Value.Count == 1 ? "En 1 cuenta" : $"Repartido en {cuentas.Value.Count} cuentas";
+
+            lblIngresosValor.Text = ingresos.ToString("C2");
+            lblIngresosPie.Text = $"Balance del mes: {(balance > 0 ? "+" : "")}{balance:C2}";
+
+            lblGastosValor.Text = gastos.ToString("C2");
+            lblGastosPie.Text = ingresos > 0 ? $"{gastos / ingresos:P0} de tus ingresos" : "Sin ingresos este mes";
 
             graficoGastos.MostrarDatos(Consultas.GastosPorCategoria(movimientos.Value, categorias.Value));
 
             gridPresupuestos.DataSource = presupuestos.Value;
-            Estilo.Ocultar(gridPresupuestos, nameof(FilaPresupuesto.Restante));
-            Estilo.Formato(gridPresupuestos, nameof(FilaPresupuesto.Limite), "C2", true);
-            Estilo.Formato(gridPresupuestos, nameof(FilaPresupuesto.Gastado), "C2", true);
+            // En la tarjeta no caben los importes: basta con la barra de lo usado; el detalle está en Presupuestos
+            Estilo.Ocultar(gridPresupuestos, nameof(FilaPresupuesto.Limite), nameof(FilaPresupuesto.Gastado), nameof(FilaPresupuesto.Restante));
             Estilo.Formato(gridPresupuestos, nameof(FilaPresupuesto.Uso), "P0", true);
 
             gridMovimientos.DataSource = Consultas.FilasMovimientos(movimientos.Value, cuentas.Value, categorias.Value);

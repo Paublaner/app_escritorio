@@ -16,6 +16,9 @@ namespace App_Escritorio.UI
             Estilo.Grid(gridCategorias);
             Estilo.BotonPrimario(btnCrear);
             Estilo.BotonPeligro(btnEliminar);
+            Estilo.Icono(btnCrear, Dibujo.IconoNuevo);
+            Estilo.Icono(btnEliminar, Dibujo.IconoEliminar);
+            Estilo.Marcar(Rol.Secundario, lblSubtitulo, lblNombre, lblTipo, lblFiltro);
 
             var tipos = Enum.GetValues<Categoria.TipoMovimiento>()
                 .Select(t => new Opcion<Categoria.TipoMovimiento>(t, Textos.Tipo(t)))

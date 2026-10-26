@@ -22,6 +22,8 @@ namespace App_Escritorio.UI
 
             Estilo.BotonPrimario(btnEnviar);
             Estilo.BotonSecundario(btnNuevo);
+            Estilo.Icono(btnEnviar, Dibujo.IconoEnviar);
+            Estilo.Icono(btnNuevo, Dibujo.IconoNuevo);
             Estilo.Marcar(Rol.Secundario, lblSubtitulo);
 
             panelMensajes.Resize += (_, _) => Recolocar();

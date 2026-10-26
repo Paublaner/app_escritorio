@@ -5,11 +5,11 @@ public class GraficoCircular : Control
 {
     private static readonly Color[] Colores =
     {
-        Color.FromArgb(37, 99, 235),
+        Color.FromArgb(99, 102, 241),
+        Color.FromArgb(236, 72, 153),
         Color.FromArgb(245, 158, 11),
         Color.FromArgb(20, 184, 166),
-        Color.FromArgb(139, 92, 246),
-        Color.FromArgb(236, 72, 153),
+        Color.FromArgb(168, 85, 247),
         Color.FromArgb(148, 163, 184)
     };
 
@@ -51,7 +51,7 @@ public class GraficoCircular : Control
             return;
         }
 
-        float grosor = diametro * 0.2f;
+        float grosor = diametro * 0.16f;
         var circulo = new RectangleF((Width - diametro) / 2f, margen, diametro, diametro);
 
         // El lápiz se dibuja centrado en la línea, así que el anillo va medio grosor hacia dentro
@@ -74,7 +74,7 @@ public class GraficoCircular : Control
             float barrido = (float)(_datos[i].Valor / total) * 360f;
 
             // Pequeña separación blanca entre porciones si hay más de una
-            float hueco = _datos.Count > 1 && barrido > 3 ? 1.5f : 0;
+            float hueco = _datos.Count > 1 && barrido > 4 ? 2.5f : 0;
 
             using var lapiz = new Pen(Colores[i % Colores.Length], grosor);
             g.DrawArc(lapiz, anillo, inicio + hueco / 2, barrido - hueco);

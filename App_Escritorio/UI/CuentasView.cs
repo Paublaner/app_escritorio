@@ -17,6 +17,10 @@ namespace App_Escritorio.UI
             Estilo.BotonPrimario(btnCrear);
             Estilo.BotonSecundario(btnRenombrar);
             Estilo.BotonPeligro(btnEliminar);
+            Estilo.Icono(btnCrear, Dibujo.IconoNuevo);
+            Estilo.Icono(btnRenombrar, Dibujo.IconoEditar);
+            Estilo.Icono(btnEliminar, Dibujo.IconoEliminar);
+            Estilo.Marcar(Rol.Secundario, lblSubtitulo, lblNombre, lblTipo, lblSaldo);
 
             cmbTipo.DisplayMember = nameof(Opcion<Cuenta.TipoCuenta>.Texto);
             cmbTipo.ValueMember = nameof(Opcion<Cuenta.TipoCuenta>.Valor);

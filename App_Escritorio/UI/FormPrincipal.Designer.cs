@@ -36,14 +36,13 @@ namespace App_Escritorio.UI
             btnMovimientos = new Button();
             btnCuentas = new Button();
             btnResumen = new Button();
-            lblLogo = new Label();
             panelContenido = new Panel();
             panelLateral.SuspendLayout();
             SuspendLayout();
             //
             // panelLateral
             //
-            panelLateral.BackColor = Color.FromArgb(30, 41, 59);
+            panelLateral.BackColor = Color.White;
             panelLateral.Controls.Add(btnTema);
             panelLateral.Controls.Add(btnAsistente);
             panelLateral.Controls.Add(btnPresupuestos);
@@ -51,27 +50,24 @@ namespace App_Escritorio.UI
             panelLateral.Controls.Add(btnMovimientos);
             panelLateral.Controls.Add(btnCuentas);
             panelLateral.Controls.Add(btnResumen);
-            panelLateral.Controls.Add(lblLogo);
             panelLateral.Dock = DockStyle.Left;
             panelLateral.Location = new Point(0, 0);
             panelLateral.Name = "panelLateral";
-            panelLateral.Size = new Size(200, 760);
+            panelLateral.Size = new Size(240, 800);
             panelLateral.TabIndex = 0;
+            panelLateral.Paint += panelLateral_Paint;
             //
             // btnTema
             //
+            btnTema.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnTema.Cursor = Cursors.Hand;
-            btnTema.Dock = DockStyle.Bottom;
             btnTema.FlatAppearance.BorderSize = 0;
             btnTema.FlatStyle = FlatStyle.Flat;
-            btnTema.ForeColor = Color.White;
-            btnTema.Location = new Point(0, 712);
+            btnTema.Location = new Point(12, 740);
             btnTema.Name = "btnTema";
-            btnTema.Padding = new Padding(20, 0, 0, 0);
-            btnTema.Size = new Size(200, 48);
+            btnTema.Size = new Size(216, 44);
             btnTema.TabIndex = 6;
             btnTema.Text = "Modo oscuro";
-            btnTema.TextAlign = ContentAlignment.MiddleLeft;
             btnTema.UseVisualStyleBackColor = false;
             //
             // btnAsistente
@@ -79,14 +75,11 @@ namespace App_Escritorio.UI
             btnAsistente.Cursor = Cursors.Hand;
             btnAsistente.FlatAppearance.BorderSize = 0;
             btnAsistente.FlatStyle = FlatStyle.Flat;
-            btnAsistente.ForeColor = Color.White;
-            btnAsistente.Location = new Point(0, 310);
+            btnAsistente.Location = new Point(12, 360);
             btnAsistente.Name = "btnAsistente";
-            btnAsistente.Padding = new Padding(20, 0, 0, 0);
-            btnAsistente.Size = new Size(200, 44);
-            btnAsistente.TabIndex = 7;
+            btnAsistente.Size = new Size(216, 44);
+            btnAsistente.TabIndex = 5;
             btnAsistente.Text = "Asistente";
-            btnAsistente.TextAlign = ContentAlignment.MiddleLeft;
             btnAsistente.UseVisualStyleBackColor = false;
             //
             // btnPresupuestos
@@ -94,14 +87,11 @@ namespace App_Escritorio.UI
             btnPresupuestos.Cursor = Cursors.Hand;
             btnPresupuestos.FlatAppearance.BorderSize = 0;
             btnPresupuestos.FlatStyle = FlatStyle.Flat;
-            btnPresupuestos.ForeColor = Color.White;
-            btnPresupuestos.Location = new Point(0, 266);
+            btnPresupuestos.Location = new Point(12, 312);
             btnPresupuestos.Name = "btnPresupuestos";
-            btnPresupuestos.Padding = new Padding(20, 0, 0, 0);
-            btnPresupuestos.Size = new Size(200, 44);
-            btnPresupuestos.TabIndex = 5;
+            btnPresupuestos.Size = new Size(216, 44);
+            btnPresupuestos.TabIndex = 4;
             btnPresupuestos.Text = "Presupuestos";
-            btnPresupuestos.TextAlign = ContentAlignment.MiddleLeft;
             btnPresupuestos.UseVisualStyleBackColor = false;
             //
             // btnCategorias
@@ -109,14 +99,11 @@ namespace App_Escritorio.UI
             btnCategorias.Cursor = Cursors.Hand;
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.FlatStyle = FlatStyle.Flat;
-            btnCategorias.ForeColor = Color.White;
-            btnCategorias.Location = new Point(0, 222);
+            btnCategorias.Location = new Point(12, 264);
             btnCategorias.Name = "btnCategorias";
-            btnCategorias.Padding = new Padding(20, 0, 0, 0);
-            btnCategorias.Size = new Size(200, 44);
-            btnCategorias.TabIndex = 4;
+            btnCategorias.Size = new Size(216, 44);
+            btnCategorias.TabIndex = 3;
             btnCategorias.Text = "Categorías";
-            btnCategorias.TextAlign = ContentAlignment.MiddleLeft;
             btnCategorias.UseVisualStyleBackColor = false;
             //
             // btnMovimientos
@@ -124,14 +111,11 @@ namespace App_Escritorio.UI
             btnMovimientos.Cursor = Cursors.Hand;
             btnMovimientos.FlatAppearance.BorderSize = 0;
             btnMovimientos.FlatStyle = FlatStyle.Flat;
-            btnMovimientos.ForeColor = Color.White;
-            btnMovimientos.Location = new Point(0, 178);
+            btnMovimientos.Location = new Point(12, 216);
             btnMovimientos.Name = "btnMovimientos";
-            btnMovimientos.Padding = new Padding(20, 0, 0, 0);
-            btnMovimientos.Size = new Size(200, 44);
-            btnMovimientos.TabIndex = 3;
+            btnMovimientos.Size = new Size(216, 44);
+            btnMovimientos.TabIndex = 2;
             btnMovimientos.Text = "Movimientos";
-            btnMovimientos.TextAlign = ContentAlignment.MiddleLeft;
             btnMovimientos.UseVisualStyleBackColor = false;
             //
             // btnCuentas
@@ -139,14 +123,11 @@ namespace App_Escritorio.UI
             btnCuentas.Cursor = Cursors.Hand;
             btnCuentas.FlatAppearance.BorderSize = 0;
             btnCuentas.FlatStyle = FlatStyle.Flat;
-            btnCuentas.ForeColor = Color.White;
-            btnCuentas.Location = new Point(0, 134);
+            btnCuentas.Location = new Point(12, 168);
             btnCuentas.Name = "btnCuentas";
-            btnCuentas.Padding = new Padding(20, 0, 0, 0);
-            btnCuentas.Size = new Size(200, 44);
-            btnCuentas.TabIndex = 2;
+            btnCuentas.Size = new Size(216, 44);
+            btnCuentas.TabIndex = 1;
             btnCuentas.Text = "Cuentas";
-            btnCuentas.TextAlign = ContentAlignment.MiddleLeft;
             btnCuentas.UseVisualStyleBackColor = false;
             //
             // btnResumen
@@ -154,46 +135,32 @@ namespace App_Escritorio.UI
             btnResumen.Cursor = Cursors.Hand;
             btnResumen.FlatAppearance.BorderSize = 0;
             btnResumen.FlatStyle = FlatStyle.Flat;
-            btnResumen.ForeColor = Color.White;
-            btnResumen.Location = new Point(0, 90);
+            btnResumen.Location = new Point(12, 120);
             btnResumen.Name = "btnResumen";
-            btnResumen.Padding = new Padding(20, 0, 0, 0);
-            btnResumen.Size = new Size(200, 44);
-            btnResumen.TabIndex = 1;
+            btnResumen.Size = new Size(216, 44);
+            btnResumen.TabIndex = 0;
             btnResumen.Text = "Resumen";
-            btnResumen.TextAlign = ContentAlignment.MiddleLeft;
             btnResumen.UseVisualStyleBackColor = false;
-            //
-            // lblLogo
-            //
-            lblLogo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblLogo.ForeColor = Color.White;
-            lblLogo.Location = new Point(20, 24);
-            lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(160, 40);
-            lblLogo.TabIndex = 0;
-            lblLogo.Text = "Finanzas";
-            lblLogo.TextAlign = ContentAlignment.MiddleLeft;
             //
             // panelContenido
             //
-            panelContenido.BackColor = Color.FromArgb(248, 250, 252);
+            panelContenido.BackColor = Color.FromArgb(244, 246, 251);
             panelContenido.Dock = DockStyle.Fill;
-            panelContenido.Location = new Point(200, 0);
+            panelContenido.Location = new Point(240, 0);
             panelContenido.Name = "panelContenido";
-            panelContenido.Padding = new Padding(24);
-            panelContenido.Size = new Size(1060, 760);
+            panelContenido.Padding = new Padding(32, 28, 32, 24);
+            panelContenido.Size = new Size(1060, 800);
             panelContenido.TabIndex = 1;
             //
             // FormPrincipal
             //
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1260, 760);
+            ClientSize = new Size(1300, 800);
             Controls.Add(panelContenido);
             Controls.Add(panelLateral);
             Font = new Font("Segoe UI", 10F);
-            MinimumSize = new Size(1230, 720);
+            MinimumSize = new Size(1280, 760);
             Name = "FormPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Finanzas";
@@ -204,7 +171,6 @@ namespace App_Escritorio.UI
         #endregion
 
         private Panel panelLateral;
-        private Label lblLogo;
         private Button btnResumen;
         private Button btnCuentas;
         private Button btnMovimientos;

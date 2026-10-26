@@ -1,3 +1,4 @@
+from langchain_tavily import TavilySearch
 import psycopg
 from dotenv import load_dotenv
 import os
@@ -81,6 +82,14 @@ ORDER BY p."Anio", p."Mes", c."Nombre";
 '''
 
 load_dotenv()
+
+buscador = TavilySearch(
+    max_results=5,
+    topic="general",
+    country="spain",
+    time_range="year",
+    search_depth="basic"
+)
 
 @tool
 def obtener_cuentas() -> str:
@@ -183,3 +192,33 @@ def analizar_gastos(nombre_cuenta: str | None = None, meses: int = 3) -> str:
                     lineas.append(f"{inicio} -> dentro, quedan {limite - gastado:.2f}€")
 
             return "\n".join(lineas)
+
+
+@tool
+def buscar_ofertas(consulta: str) -> str:
+    """
+    Busca en internet tarifas y ofertas actuales en Madrid para encontrar alternativas
+    más baratas a un gasto fijo del usuario. Úsala solo después de analizar_gastos,
+    para gastos como luz, gas, fibra, móvil, seguros, gimnasio o suscripciones.
+    No la uses para inversiones, préstamos ni productos financieros.
+
+    Args:
+        consulta: búsqueda corta y genérica en español sobre el tipo de servicio,
+            sin importes ni datos del usuario. Ejemplo: "tarifa fibra 600Mb barata Madrid".
+    """
+    try:
+        respuesta = buscador.invoke({"query": consulta})
+    except Exception:
+        return "No se han podido buscar ofertas en este momento"
+
+    resultado = respuesta.get("results", [])
+
+    if not resultado:
+        return "No se encontraron ofertas para esa búsqueda"
+
+    lineas = []
+
+    for r in resultado:
+        lineas.append(f"Título: {r['title']}\nEnlace: {r['url']}\nResumen: {r['content'][:300]}")
+
+    return "\n\n".join(lineas)

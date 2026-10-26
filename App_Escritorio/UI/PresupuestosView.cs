@@ -20,6 +20,8 @@ namespace App_Escritorio.UI
             Estilo.Grid(gridPresupuestos);
             gridPresupuestos.CellFormatting += Estilo.ColorearPresupuesto;
             Estilo.BotonPrimario(btnDefinir);
+            Estilo.Icono(btnDefinir, Dibujo.IconoGuardar);
+            Estilo.Marcar(Rol.Secundario, lblSubtitulo, lblCategoria, lblLimite, lblMes);
         }
 
         public async Task CargarAsync()

@@ -29,105 +29,146 @@ namespace App_Escritorio.UI
         private void InitializeComponent()
         {
             lblTitulo = new Label();
+            lblSubtitulo = new Label();
+            panelFormulario = new Tarjeta();
             lblNombre = new Label();
             txtNombre = new TextBox();
             lblTipo = new Label();
             cmbTipo = new ComboBox();
             btnCrear = new Button();
-            gridCategorias = new DataGridView();
+            panelLista = new Tarjeta();
             lblFiltro = new Label();
             cmbFiltro = new ComboBox();
+            gridCategorias = new DataGridView();
             btnEliminar = new Button();
+            panelFormulario.SuspendLayout();
+            panelLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridCategorias).BeginInit();
             SuspendLayout();
             //
             // lblTitulo
             //
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(145, 32);
+            lblTitulo.Size = new Size(157, 37);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Categorías";
+            //
+            // lblSubtitulo
+            //
+            lblSubtitulo.AutoSize = true;
+            lblSubtitulo.Location = new Point(3, 42);
+            lblSubtitulo.Name = "lblSubtitulo";
+            lblSubtitulo.Size = new Size(249, 19);
+            lblSubtitulo.TabIndex = 1;
+            lblSubtitulo.Text = "Organiza tus ingresos y tus gastos";
+            //
+            // panelFormulario
+            //
+            panelFormulario.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelFormulario.Controls.Add(lblNombre);
+            panelFormulario.Controls.Add(txtNombre);
+            panelFormulario.Controls.Add(lblTipo);
+            panelFormulario.Controls.Add(cmbTipo);
+            panelFormulario.Controls.Add(btnCrear);
+            panelFormulario.Location = new Point(0, 78);
+            panelFormulario.Name = "panelFormulario";
+            panelFormulario.Size = new Size(950, 104);
+            panelFormulario.TabIndex = 2;
             //
             // lblNombre
             //
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(0, 56);
+            lblNombre.Font = new Font("Segoe UI Semibold", 9F);
+            lblNombre.Location = new Point(22, 20);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(59, 19);
-            lblNombre.TabIndex = 1;
+            lblNombre.Size = new Size(51, 15);
+            lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre";
             //
             // txtNombre
             //
-            txtNombre.Location = new Point(0, 78);
+            txtNombre.Location = new Point(22, 44);
             txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Ej.: Supermercado";
             txtNombre.Size = new Size(240, 25);
-            txtNombre.TabIndex = 2;
+            txtNombre.TabIndex = 1;
             //
             // lblTipo
             //
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(256, 56);
+            lblTipo.Font = new Font("Segoe UI Semibold", 9F);
+            lblTipo.Location = new Point(278, 20);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(35, 19);
-            lblTipo.TabIndex = 3;
+            lblTipo.Size = new Size(30, 15);
+            lblTipo.TabIndex = 2;
             lblTipo.Text = "Tipo";
             //
             // cmbTipo
             //
             cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTipo.Location = new Point(256, 78);
+            cmbTipo.Location = new Point(278, 44);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(160, 25);
-            cmbTipo.TabIndex = 4;
+            cmbTipo.TabIndex = 3;
             //
             // btnCrear
             //
-            btnCrear.Location = new Point(432, 76);
+            btnCrear.Location = new Point(454, 40);
             btnCrear.Name = "btnCrear";
-            btnCrear.Size = new Size(150, 30);
-            btnCrear.TabIndex = 5;
+            btnCrear.Size = new Size(170, 34);
+            btnCrear.TabIndex = 4;
             btnCrear.Text = "Crear categoría";
             btnCrear.Click += btnCrear_Click;
             //
-            // gridCategorias
+            // panelLista
             //
-            gridCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            gridCategorias.Location = new Point(0, 124);
-            gridCategorias.Name = "gridCategorias";
-            gridCategorias.Size = new Size(950, 456);
-            gridCategorias.TabIndex = 6;
+            panelLista.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelLista.Controls.Add(lblFiltro);
+            panelLista.Controls.Add(cmbFiltro);
+            panelLista.Controls.Add(gridCategorias);
+            panelLista.Controls.Add(btnEliminar);
+            panelLista.Location = new Point(0, 196);
+            panelLista.Name = "panelLista";
+            panelLista.Size = new Size(950, 444);
+            panelLista.TabIndex = 3;
             //
             // lblFiltro
             //
-            lblFiltro.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblFiltro.AutoSize = true;
-            lblFiltro.Location = new Point(0, 600);
+            lblFiltro.Font = new Font("Segoe UI Semibold", 9F);
+            lblFiltro.Location = new Point(22, 23);
             lblFiltro.Name = "lblFiltro";
-            lblFiltro.Size = new Size(58, 19);
-            lblFiltro.TabIndex = 7;
+            lblFiltro.Size = new Size(50, 15);
+            lblFiltro.TabIndex = 0;
             lblFiltro.Text = "Mostrar";
             //
             // cmbFiltro
             //
-            cmbFiltro.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             cmbFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbFiltro.Location = new Point(66, 596);
+            cmbFiltro.Location = new Point(84, 18);
             cmbFiltro.Name = "cmbFiltro";
             cmbFiltro.Size = new Size(160, 25);
-            cmbFiltro.TabIndex = 8;
+            cmbFiltro.TabIndex = 1;
             cmbFiltro.SelectionChangeCommitted += cmbFiltro_SelectionChangeCommitted;
+            //
+            // gridCategorias
+            //
+            gridCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gridCategorias.Location = new Point(14, 58);
+            gridCategorias.Name = "gridCategorias";
+            gridCategorias.Size = new Size(922, 314);
+            gridCategorias.TabIndex = 2;
             //
             // btnEliminar
             //
             btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnEliminar.Location = new Point(825, 592);
+            btnEliminar.Location = new Point(806, 385);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(125, 34);
-            btnEliminar.TabIndex = 9;
+            btnEliminar.Size = new Size(125, 36);
+            btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
             btnEliminar.Click += btnEliminar_Click;
             //
@@ -135,20 +176,18 @@ namespace App_Escritorio.UI
             //
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.FromArgb(248, 250, 252);
+            BackColor = Color.FromArgb(244, 246, 251);
             Controls.Add(lblTitulo);
-            Controls.Add(lblNombre);
-            Controls.Add(txtNombre);
-            Controls.Add(lblTipo);
-            Controls.Add(cmbTipo);
-            Controls.Add(btnCrear);
-            Controls.Add(gridCategorias);
-            Controls.Add(lblFiltro);
-            Controls.Add(cmbFiltro);
-            Controls.Add(btnEliminar);
+            Controls.Add(lblSubtitulo);
+            Controls.Add(panelFormulario);
+            Controls.Add(panelLista);
             Font = new Font("Segoe UI", 10F);
             Name = "CategoriasView";
             Size = new Size(950, 640);
+            panelFormulario.ResumeLayout(false);
+            panelFormulario.PerformLayout();
+            panelLista.ResumeLayout(false);
+            panelLista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridCategorias).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -157,14 +196,17 @@ namespace App_Escritorio.UI
         #endregion
 
         private Label lblTitulo;
+        private Label lblSubtitulo;
+        private Tarjeta panelFormulario;
         private Label lblNombre;
         private TextBox txtNombre;
         private Label lblTipo;
         private ComboBox cmbTipo;
         private Button btnCrear;
-        private DataGridView gridCategorias;
+        private Tarjeta panelLista;
         private Label lblFiltro;
         private ComboBox cmbFiltro;
+        private DataGridView gridCategorias;
         private Button btnEliminar;
     }
 }

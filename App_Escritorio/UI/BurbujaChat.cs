@@ -2,10 +2,10 @@ using System.Drawing.Drawing2D;
 
 namespace App_Escritorio.UI;
 
-// Un mensaje del chat: fondo redondeado con el color del tema, a la derecha si lo escribe el usuario
+// Un mensaje del chat: fondo redondeado, a la derecha y con el degradado de acento si lo escribe el usuario
 public class BurbujaChat : Label
 {
-    private const int Radio = 14;
+    private const int Radio = 16;
 
     public bool EsUsuario { get; }
 
@@ -19,7 +19,7 @@ public class BurbujaChat : Label
         Text = texto;
         AutoSize = true;
         UseMnemonic = false;
-        Padding = new Padding(14, 10, 14, 10);
+        Padding = new Padding(16, 11, 16, 11);
         Margin = Padding.Empty;
         Font = new Font("Segoe UI", 10.5F);
 
@@ -44,33 +44,21 @@ public class BurbujaChat : Label
         float radio = Radio * DeviceDpi / 96f;
         var rect = new RectangleF(0, 0, Width - 1, Height - 1);
 
-        using (var forma = Redondeado(rect, radio))
-        using (var fondo = new SolidBrush(EsUsuario ? Estilo.Acento : Estilo.Superficie))
+        using (var forma = Dibujo.Redondeado(rect, radio))
         {
-            g.FillPath(fondo, forma);
-
-            if (!EsUsuario)
+            if (EsUsuario)
             {
-                using var borde = new Pen(EsError ? Estilo.Gasto : Estilo.Borde);
-                g.DrawPath(borde, forma);
+                using var degradado = Dibujo.Degradado(rect);
+                g.FillPath(degradado, forma);
+            }
+            else
+            {
+                using var fondo = new SolidBrush(EsError ? Estilo.GastoSuave : Estilo.Hover);
+                g.FillPath(fondo, forma);
             }
         }
 
         var zonaTexto = new Rectangle(Padding.Left, Padding.Top, Width - Padding.Horizontal, Height - Padding.Vertical);
         TextRenderer.DrawText(g, Text, Font, zonaTexto, ForeColor, TextFormatFlags.WordBreak | TextFormatFlags.NoPrefix);
-    }
-
-    private static GraphicsPath Redondeado(RectangleF r, float radio)
-    {
-        float d = radio * 2;
-        var path = new GraphicsPath();
-
-        path.AddArc(r.Left, r.Top, d, d, 180, 90);
-        path.AddArc(r.Right - d, r.Top, d, d, 270, 90);
-        path.AddArc(r.Right - d, r.Bottom - d, d, d, 0, 90);
-        path.AddArc(r.Left, r.Bottom - d, d, d, 90, 90);
-        path.CloseFigure();
-
-        return path;
     }
 }

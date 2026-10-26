@@ -24,6 +24,9 @@ namespace App_Escritorio.UI
             gridMovimientos.CellFormatting += Estilo.ColorearMovimiento;
             Estilo.BotonPrimario(btnRegistrar);
             Estilo.BotonPeligro(btnEliminar);
+            Estilo.Icono(btnRegistrar, Dibujo.IconoNuevo);
+            Estilo.Icono(btnEliminar, Dibujo.IconoEliminar);
+            Estilo.Marcar(Rol.Secundario, lblSubtitulo, lblCuenta, lblCategoria, lblImporte, lblFecha, lblDescripcion, lblMes, lblFiltroCuenta);
         }
 
         public async Task CargarAsync()

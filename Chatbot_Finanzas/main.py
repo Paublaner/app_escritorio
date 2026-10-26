@@ -12,7 +12,8 @@ from datetime import date
 
 funciones ={
      "obtener_cuentas": herramientas.obtener_cuentas,
-     "analizar_gastos": herramientas.analizar_gastos
+     "analizar_gastos": herramientas.analizar_gastos,
+     "buscar_ofertas": herramientas.buscar_ofertas
 }
 
 llm = ChatOllama(
@@ -87,4 +88,4 @@ def ejecutar_grafo (pregunta: str, hilo_id: str):
 
 #Solo al ejecutar main.py directamente; si otro archivo lo importa, no se lanza
 if __name__ == "__main__":
-    print(ejecutar_grafo("¿En qué puedo gastar menos?", "prueba"))
+    print(ejecutar_grafo("¿Hay alguna tarifa de gym más barata que la mía?", "prueba"))

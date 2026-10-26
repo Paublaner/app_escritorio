@@ -21,7 +21,10 @@ public static class Tema
     }
 
     // Recorre el control y todos sus hijos dándoles los colores del tema activo
-    public static void Aplicar(Control control)
+    public static void Aplicar(Control control) => Aplicar(control, Estilo.Fondo);
+
+    // fondo: el color de lo que hay debajo (el de la vista, o el de la tarjeta si el control va dentro de una)
+    private static void Aplicar(Control control, Color fondo)
     {
         switch (control)
         {
@@ -31,12 +34,21 @@ public static class Tema
             case Button boton:
                 Estilo.ColoresBoton(boton);
                 break;
+            case Tarjeta tarjeta:
+                tarjeta.ActualizarTema();
+                fondo = tarjeta.BackColor;
+                break;
+            case IconoCirculo:
+                control.Invalidate();
+                break;
             // Antes que Label: la burbuja es un Label que pinta su propio fondo
             case BurbujaChat burbuja:
                 burbuja.ActualizarTema();
                 break;
             case Label etiqueta:
                 etiqueta.ForeColor = Estilo.ColorEtiqueta(etiqueta);
+                // Sobre el degradado, transparente para que se vea la tarjeta
+                etiqueta.BackColor = etiqueta.Tag is Rol.Destacado ? Color.Transparent : fondo;
                 break;
             case ComboBox or TextBox or NumericUpDown:
                 control.BackColor = Estilo.Superficie;
@@ -55,20 +67,15 @@ public static class Tema
                 grafico.ForeColor = Estilo.Texto;
                 grafico.Invalidate();
                 break;
-            // Las tarjetas del resumen son paneles con borde
-            case Panel { BorderStyle: BorderStyle.FixedSingle }:
-                control.BackColor = Estilo.Superficie;
-                control.ForeColor = Estilo.Texto;
-                break;
             default:
-                control.BackColor = Estilo.Fondo;
+                control.BackColor = fondo;
                 control.ForeColor = Estilo.Texto;
                 break;
         }
 
         foreach (Control hijo in control.Controls)
         {
-            Aplicar(hijo);
+            Aplicar(hijo, fondo);
         }
     }
 
