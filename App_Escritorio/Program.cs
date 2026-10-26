@@ -32,6 +32,13 @@ namespace App_Escritorio
 
             services.AddLogging(builder => builder.AddDebug());
 
+            services.AddHttpClient<IAsistenteIA, AsistenteAdapter>(client =>
+            {
+                client.BaseAddress = new Uri(configuracion["Asistente:Url"]!);
+                client.Timeout = TimeSpan.FromMinutes(2); // el modelo local tarda en responder
+            });
+
+
             services.AddDbContextFactory<PostgresContext>(options =>
                 options.UseNpgsql(configuracion.GetConnectionString("Finanzas")));
 
@@ -40,6 +47,7 @@ namespace App_Escritorio
             services.AddTransient<IMovimientoPersistencia, MovimientoAdapter>();
             services.AddTransient<IPresupuestoPersistencia, PresupuestoAdapter>();
 
+            services.AddTransient<IAsistenteServicio, AsistenteServicio>();
 
 
             services.AddTransient<ICuentaServicio, CuentaServicio>();
@@ -52,6 +60,7 @@ namespace App_Escritorio
             services.AddTransient<MovimientosView>();
             services.AddTransient<CategoriasView>();
             services.AddTransient<PresupuestosView>();
+            services.AddTransient<ChatView>();
             services.AddTransient<FormPrincipal>();
 
             using var provider = services.BuildServiceProvider();

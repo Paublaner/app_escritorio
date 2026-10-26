@@ -31,6 +31,10 @@ public static class Tema
             case Button boton:
                 Estilo.ColoresBoton(boton);
                 break;
+            // Antes que Label: la burbuja es un Label que pinta su propio fondo
+            case BurbujaChat burbuja:
+                burbuja.ActualizarTema();
+                break;
             case Label etiqueta:
                 etiqueta.ForeColor = Estilo.ColorEtiqueta(etiqueta);
                 break;

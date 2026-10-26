@@ -30,6 +30,7 @@ namespace App_Escritorio.UI
         {
             panelLateral = new Panel();
             btnTema = new Button();
+            btnAsistente = new Button();
             btnPresupuestos = new Button();
             btnCategorias = new Button();
             btnMovimientos = new Button();
@@ -44,6 +45,7 @@ namespace App_Escritorio.UI
             //
             panelLateral.BackColor = Color.FromArgb(30, 41, 59);
             panelLateral.Controls.Add(btnTema);
+            panelLateral.Controls.Add(btnAsistente);
             panelLateral.Controls.Add(btnPresupuestos);
             panelLateral.Controls.Add(btnCategorias);
             panelLateral.Controls.Add(btnMovimientos);
@@ -71,6 +73,21 @@ namespace App_Escritorio.UI
             btnTema.Text = "Modo oscuro";
             btnTema.TextAlign = ContentAlignment.MiddleLeft;
             btnTema.UseVisualStyleBackColor = false;
+            //
+            // btnAsistente
+            //
+            btnAsistente.Cursor = Cursors.Hand;
+            btnAsistente.FlatAppearance.BorderSize = 0;
+            btnAsistente.FlatStyle = FlatStyle.Flat;
+            btnAsistente.ForeColor = Color.White;
+            btnAsistente.Location = new Point(0, 310);
+            btnAsistente.Name = "btnAsistente";
+            btnAsistente.Padding = new Padding(20, 0, 0, 0);
+            btnAsistente.Size = new Size(200, 44);
+            btnAsistente.TabIndex = 7;
+            btnAsistente.Text = "Asistente";
+            btnAsistente.TextAlign = ContentAlignment.MiddleLeft;
+            btnAsistente.UseVisualStyleBackColor = false;
             //
             // btnPresupuestos
             //
@@ -193,6 +210,7 @@ namespace App_Escritorio.UI
         private Button btnMovimientos;
         private Button btnCategorias;
         private Button btnPresupuestos;
+        private Button btnAsistente;
         private Panel panelContenido;
         private Button btnTema;
     }

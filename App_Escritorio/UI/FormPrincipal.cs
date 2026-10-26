@@ -5,7 +5,7 @@ namespace App_Escritorio.UI
         private readonly Dictionary<Button, UserControl> _vistas;
         private Button _activo;
 
-        public FormPrincipal(ResumenView resumen, CuentasView cuentas, MovimientosView movimientos, CategoriasView categorias, PresupuestosView presupuestos)
+        public FormPrincipal(ResumenView resumen, CuentasView cuentas, MovimientosView movimientos, CategoriasView categorias, PresupuestosView presupuestos, ChatView chat)
         {
             InitializeComponent();
 
@@ -15,7 +15,8 @@ namespace App_Escritorio.UI
                 [btnCuentas] = cuentas,
                 [btnMovimientos] = movimientos,
                 [btnCategorias] = categorias,
-                [btnPresupuestos] = presupuestos
+                [btnPresupuestos] = presupuestos,
+                [btnAsistente] = chat
             };
 
             foreach (var (boton, vista) in _vistas)
