@@ -50,11 +50,11 @@ public class TestCuentaServicio
 
         var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
         
-        mockPersistencia.Setup(p => p.AgregarAsync(It.IsAny<Cuenta>())).ReturnsAsync(Result.Fail("Fallo de BD"));
+        mockPersistencia.Setup(p => p.AgregarAsync(It.IsAny<Cuenta>())).ReturnsAsync(Result.Fail("Error al crear la cuenta"));
 
         var resultado = await servicio.CrearAsync("Cuenta de prueba", 100, Cuenta.TipoCuenta.Ahorro);
 
-        Assert.Contains(resultado.Errors, e => e.Message == "Fallo de BD");
+        Assert.Contains(resultado.Errors, e => e.Message == "Error al crear la cuenta");
     }
 
     [Fact]
@@ -74,4 +74,71 @@ public class TestCuentaServicio
         Assert.True(resultado.IsSuccess);
     }
 
+
+    [Fact]
+    public async Task RenombrarAsync_NombreVacio_DevuelveError()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        var resultado = await servicio.RenombrarAsync(1, "");
+
+        mockPersistencia.Verify(p => p.ObtenerPorIdAsync(It.IsAny<int>()), Times.Never);
+
+        Assert.Contains(resultado.Errors, e => e.Message == "El nombre de la cuenta no puede estar vacío");
+
+    }
+
+    [Fact]
+    public async Task RenombrarAsync_CuentaNoExiste_DevuelveError()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        mockPersistencia.Setup(p => p.ObtenerPorIdAsync(It.IsAny<int>())).ReturnsAsync(Result.Fail<Cuenta>("Cuenta no encontrada"));
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        var resultado = await servicio.RenombrarAsync(1, "Nuevo nombre");
+
+        mockPersistencia.Verify(p => p.ActualizarAsync(It.IsAny<Cuenta>()), Times.Never);
+
+        Assert.Contains(resultado.Errors, e => e.Message == "Error al obtener la cuenta");    
+    }
+
+    [Fact]
+    public async Task RenombrarAsync_FallaActualizar_DevuelveError()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        mockPersistencia.Setup(p => p.ObtenerPorIdAsync(It.IsAny<int>())).ReturnsAsync(Result.Ok(new Cuenta("Cuenta de prueba", 100, Cuenta.TipoCuenta.Ahorro)));
+        mockPersistencia.Setup(p => p.ActualizarAsync(It.IsAny<Cuenta>())).ReturnsAsync(Result.Fail("Fallo de BD"));
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        var resultado = await servicio.RenombrarAsync(1, "Nuevo nombre");
+
+        Assert.Contains(resultado.Errors, e => e.Message == "Error al renombrar la cuenta");
+    }
+
+    [Fact]
+    public async Task RenombrarAsync_DatosValidos_CambiaNombre()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        mockPersistencia.Setup(p => p.ObtenerPorIdAsync(It.IsAny<int>())).ReturnsAsync(Result.Ok(new Cuenta("Cuenta de prueba", 100, Cuenta.TipoCuenta.Ahorro)));
+        mockPersistencia.Setup(p => p.ActualizarAsync(It.IsAny<Cuenta>())).ReturnsAsync(Result.Ok());
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        var resultado = await servicio.RenombrarAsync(1, "Nuevo nombre");
+
+        mockPersistencia.Verify(p => p.ActualizarAsync(It.Is<Cuenta>(c => c.Nombre == "Nuevo nombre")), Times.Once);
+
+        Assert.True(resultado.IsSuccess);
+    }
 }
