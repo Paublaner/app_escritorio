@@ -8,7 +8,7 @@ using App_Escritorio.Application;
 using Microsoft.Extensions.Logging;
 using App_Escritorio.Domain.Model;
 using FluentResults;
-namespace App_Escritorio.Test;
+namespace App_Escritorio.Tests;
 
 public class TestCuentaServicio
 {
@@ -69,9 +69,12 @@ public class TestCuentaServicio
 
         var resultado = await servicio.CrearAsync("Cuenta de prueba", 100, Cuenta.TipoCuenta.Ahorro);
 
-        mockPersistencia.Verify(p => p.AgregarAsync(It.IsAny<Cuenta>()), Times.Once);
+        mockPersistencia.Verify(p => p.AgregarAsync(It.Is<Cuenta>(c => c.Nombre == "Cuenta de prueba" && c.Saldo == 100 && c.Tipo == Cuenta.TipoCuenta.Ahorro)), Times.Once);
 
         Assert.True(resultado.IsSuccess);
+        Assert.Equal("Cuenta de prueba", resultado.Value.Nombre);
+        Assert.Equal(100m, resultado.Value.Saldo);
+        Assert.Equal(Cuenta.TipoCuenta.Ahorro, resultado.Value.Tipo);
     }
 
 
@@ -141,4 +144,60 @@ public class TestCuentaServicio
 
         Assert.True(resultado.IsSuccess);
     }
+
+    [Fact]
+    public async Task ObtenerSaldoTotalAsync_VariasCuentas_DevuelveSuma()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        mockPersistencia.Setup(p => p.ObtenerTodasAsync()).ReturnsAsync(Result.Ok(new List<Cuenta>
+        {
+            new Cuenta("Cuenta 1", 100, Cuenta.TipoCuenta.Ahorro),
+            new Cuenta("Cuenta 2", 250.50m, Cuenta.TipoCuenta.Banco),
+            new Cuenta("Cuenta 3", 300, Cuenta.TipoCuenta.Ahorro)
+        }));
+
+        var resultado = await servicio.ObtenerSaldoTotalAsync();
+
+        Assert.True(resultado.IsSuccess);
+        Assert.Equal(650.50m, resultado.Value);
+    }
+
+    [Fact]
+    public async Task ObtenerSaldoTotalAsync_SinCuentas_DevuelveCero()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        mockPersistencia.Setup(p => p.ObtenerTodasAsync()).ReturnsAsync(Result.Ok(new List<Cuenta>()));
+
+        var resultado = await servicio.ObtenerSaldoTotalAsync();
+
+        Assert.True(resultado.IsSuccess);
+        Assert.Equal(0m, resultado.Value);
+    }
+
+
+    [Fact]
+    public async Task ObtenerSaldoTotalAsync_FallaPersistencia_DevuelveError()
+    {
+        var mockPersistencia = new Mock<ICuentaPersistencia>();
+        var mockLogger = new Mock<ILogger<CuentaServicio>>();
+
+        var servicio = new CuentaServicio(mockPersistencia.Object, mockLogger.Object);
+
+        mockPersistencia.Setup(p => p.ObtenerTodasAsync()).ReturnsAsync(Result.Fail<List<Cuenta>>("Fallo de BD"));
+
+        var resultado = await servicio.ObtenerSaldoTotalAsync();
+
+        Assert.Contains(resultado.Errors, e => e.Message == "Error al obtener el saldo total");
+    }
+
+
+
 }
