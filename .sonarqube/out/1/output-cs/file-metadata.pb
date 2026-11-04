@@ -1,0 +1,10 @@
+Œ
+€C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\obj\Debug\net10.0-windows\App_Escritorio.Tests.GlobalUsings.g.csutf-8‰
+~C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\obj\Debug\net10.0-windows\App_Escritorio.Tests.AssemblyInfo.csutf-8•
+‰C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\obj\Debug\net10.0-windows\.NETCoreApp,Version=v10.0.AssemblyAttributes.csutf-8w
+lC:\Users\pablo\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.csutf-8c
+ZC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestPresupuestoServicio.csutf-8b
+YC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestMovimientoServicio.csutf-8^
+UC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestCuentaServicio.csutf-8a
+XC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestCategoriaServicio.csutf-8a
+XC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestAsistenteServicio.csutf-8

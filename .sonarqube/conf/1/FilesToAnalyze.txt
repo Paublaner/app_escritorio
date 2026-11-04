@@ -1,0 +1,13 @@
+﻿C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestAsistenteServicio.cs
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestCategoriaServicio.cs
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestCuentaServicio.cs
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestMovimientoServicio.cs
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestPresupuestoServicio.cs
+C:\Users\pablo\.nuget\packages\microsoft.net.test.sdk\17.14.1\build\net8.0\Microsoft.NET.Test.Sdk.Program.cs
+C:\Users\pablo\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe
+C:\Users\pablo\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll
+C:\Users\pablo\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll
+C:\Users\pablo\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestResults\75828099-e77a-460e-a67f-8c25f5a4abb3\coverage.opencover.xml
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestResults\9046e045-b4d7-4cbb-bff2-6cfcf1e3d9f4\coverage.opencover.xml
+C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio.Tests\TestResults\b4725d7f-b116-45b9-8601-637350b97562\coverage.opencover.xml
