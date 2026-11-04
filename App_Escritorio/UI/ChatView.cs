@@ -136,12 +136,26 @@ namespace App_Escritorio.UI
         // El modelo responde en Markdown; un Label no lo entiende, así que se quitan las marcas más comunes
         private static string LimpiarMarkdown(string texto)
         {
-            texto = Regex.Replace(texto, @"^\s*#{1,6}\s*", "", RegexOptions.Multiline);
-            texto = Regex.Replace(texto, @"^(\s*)[-*]\s+", "$1• ", RegexOptions.Multiline);
+            try
+            {
+                texto = RegexEncabezado().Replace(texto, "");
+                texto = RegexLista().Replace(texto, "$1• ");
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                // Si el texto tarda demasiado en procesarse, se muestra con sus marcas antes que perder la respuesta
+            }
+
             texto = texto.Replace("**", "").Replace("__", "");
 
             return texto.Trim();
         }
+
+        [GeneratedRegex(@"^\s*#{1,6}\s*", RegexOptions.Multiline, matchTimeoutMilliseconds: 1000)]
+        private static partial Regex RegexEncabezado();
+
+        [GeneratedRegex(@"^(\s*)[-*]\s+", RegexOptions.Multiline, matchTimeoutMilliseconds: 1000)]
+        private static partial Regex RegexLista();
 
         private async void btnEnviar_Click(object? sender, EventArgs e)
         {

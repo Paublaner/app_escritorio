@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace App_Escritorio.UI;
 
 // Modo claro u oscuro: recuerda la elección del usuario y recolorea los controles
-public static class Tema
+public static partial class Tema
 {
     private static readonly string Archivo = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Finanzas", "tema.txt");
@@ -92,9 +92,10 @@ public static class Tema
         int fondo = ColorTranslator.ToWin32(Estilo.Fondo);
         int texto = ColorTranslator.ToWin32(Estilo.Texto);
 
-        DwmSetWindowAttribute(form.Handle, DwmUsarModoOscuro, ref oscuro, sizeof(int));
-        DwmSetWindowAttribute(form.Handle, DwmColorBarra, ref fondo, sizeof(int));
-        DwmSetWindowAttribute(form.Handle, DwmColorTextoBarra, ref texto, sizeof(int));
+        // Es solo estético: en versiones de Windows sin estos atributos se ignora el fallo
+        _ = DwmSetWindowAttribute(form.Handle, DwmUsarModoOscuro, ref oscuro, sizeof(int));
+        _ = DwmSetWindowAttribute(form.Handle, DwmColorBarra, ref fondo, sizeof(int));
+        _ = DwmSetWindowAttribute(form.Handle, DwmColorTextoBarra, ref texto, sizeof(int));
     }
 
     // Combos, barras de desplazamiento, etc. los dibuja Windows: se les pide su versión oscura
@@ -118,14 +119,14 @@ public static class Tema
 
         // DarkMode_CFD es el tema de los cuadros de diálogo de archivos: combos y cajas de texto oscuros
         string? tema = !Oscuro ? null : control is ComboBox or TextBox ? "DarkMode_CFD" : "DarkMode_Explorer";
-        SetWindowTheme(control.Handle, tema, null);
+        _ = SetWindowTheme(control.Handle, tema, null);
 
         // Las flechas de un DateTimePicker con ShowUpDown son una ventana hija de Windows
         IntPtr flechas = FindWindowEx(control.Handle, IntPtr.Zero, "msctls_updown32", null);
 
         if (flechas != IntPtr.Zero)
         {
-            SetWindowTheme(flechas, Oscuro ? "DarkMode_Explorer" : null, null);
+            _ = SetWindowTheme(flechas, Oscuro ? "DarkMode_Explorer" : null, null);
         }
 
         control.Invalidate(true);
@@ -167,12 +168,12 @@ public static class Tema
     private const int DwmColorBarra = 35;
     private const int DwmColorTextoBarra = 36;
 
-    [DllImport("dwmapi.dll")]
-    private static extern int DwmSetWindowAttribute(IntPtr hwnd, int atributo, ref int valor, int tamano);
+    [LibraryImport("dwmapi.dll")]
+    private static partial int DwmSetWindowAttribute(IntPtr hwnd, int atributo, ref int valor, int tamano);
 
-    [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
-    private static extern int SetWindowTheme(IntPtr hwnd, string? subApp, string? subIdList);
+    [LibraryImport("uxtheme.dll", StringMarshalling = StringMarshalling.Utf16)]
+    private static partial int SetWindowTheme(IntPtr hwnd, string? subApp, string? subIdList);
 
-    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-    private static extern IntPtr FindWindowEx(IntPtr padre, IntPtr despuesDe, string clase, string? titulo);
+    [LibraryImport("user32.dll", EntryPoint = "FindWindowExW", StringMarshalling = StringMarshalling.Utf16)]
+    private static partial IntPtr FindWindowEx(IntPtr padre, IntPtr despuesDe, string clase, string? titulo);
 }

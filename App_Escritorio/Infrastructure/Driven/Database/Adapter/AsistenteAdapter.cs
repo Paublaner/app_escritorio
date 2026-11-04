@@ -23,7 +23,7 @@ public class AsistenteAdapter (HttpClient http,ILogger<AsistenteAdapter> logger)
             if (!response.IsSuccessStatusCode)
             {
                 var errorContent = await response.Content.ReadAsStringAsync();
-                _logger.LogError($"El asistente respondió con un error ({(int)response.StatusCode}).");
+                _logger.LogError("El asistente respondió con un error ({StatusCode}).", (int)response.StatusCode);
                 return Result.Fail($"El asistente respondió con un error ({(int)response.StatusCode}).");
             }
 
