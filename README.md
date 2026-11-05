@@ -147,7 +147,7 @@ Las reglas viven en los servicios de la capa Application. Todas se comprueban **
 - [x] Modo claro y oscuro
 - [x] Asistente de IA con memoria, conectado a la aplicación por HTTP
 - [x] Búsqueda de ofertas en internet
-- [ ] Tests unitarios
+- [x] Tests unitarios
 
 ## Ejecución
 
