@@ -10,7 +10,7 @@
     },
     {
       "key": "sonar.scanner.bootstrapStartTime",
-      "value": "1793798550000"
+      "value": "1793825213000"
     },
     {
       "key": "sonar.projectKey",
@@ -106,7 +106,7 @@
     },
     {
       "key": "16C47B35-90A3-0071-C533-A9EF7337F1D0.sonar.tests",
-      "value": "C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\obj\\App_Escritorio.Tests.csproj.nuget.dgspec.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\obj\\project.assets.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\appsettings.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.deps.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.runtimeconfig.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.Tests.deps.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.Tests.runtimeconfig.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\obj\\Debug\\net10.0-windows\\App_Escritorio.Tests.sourcelink.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestAsistenteServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestCategoriaServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestCuentaServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestMovimientoServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestPresupuestoServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestResults\\75828099-e77a-460e-a67f-8c25f5a4abb3\\coverage.opencover.xml,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestResults\\9046e045-b4d7-4cbb-bff2-6cfcf1e3d9f4\\coverage.opencover.xml,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestResults\\b4725d7f-b116-45b9-8601-637350b97562\\coverage.opencover.xml"
+      "value": "C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\obj\\App_Escritorio.Tests.csproj.nuget.dgspec.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\obj\\project.assets.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\appsettings.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.deps.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.runtimeconfig.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.Tests.deps.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\bin\\Debug\\net10.0-windows\\App_Escritorio.Tests.runtimeconfig.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\obj\\Debug\\net10.0-windows\\App_Escritorio.Tests.sourcelink.json,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\Integracion\\PostgresFixture.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\Integracion\\TestCuentaAdapter.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestAsistenteServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestCategoriaServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestCuentaServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestMovimientoServicio.cs,C:\\Users\\pablo\\source\\repos\\App_Escritorio\\App_Escritorio.Tests\\TestPresupuestoServicio.cs"
     },
     {
       "key": "16C47B35-90A3-0071-C533-A9EF7337F1D0.sonar.cs.analyzer.projectOutPaths",
@@ -134,7 +134,7 @@
     },
     {
       "key": "sonar.coverage.exclusions",
-      "value": "**/UI/**,**/Infrastructure/**,**/Program.cs"
+      "value": "**/UI/**,**/Program.cs"
     },
     {
       "key": "sonar.exclusions",

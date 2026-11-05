@@ -76,6 +76,53 @@ public class TestCuentaAdapter(PostgresFixture fixture): IClassFixture<PostgresF
         Assert.Contains(resultadoActualizar.Errors, e => e.Message == "Cuenta no encontrada");
 
     }
+
+    [Fact]
+    public async Task EliminarAsync_CuentaExiste_LaElimina()
+    {
+        var cuenta = new Cuenta("Cuenta de prueba", 100, Cuenta.TipoCuenta.Ahorro);
+        using var contexto = _fixture.CrearContexto();
+        var adapter = new CuentaAdapter(contexto);
+
+        var resultadoAgregar = await adapter.AgregarAsync(cuenta);
+        Assert.True(resultadoAgregar.IsSuccess);
+
+        using var contextoEliminar = _fixture.CrearContexto();
+        var adapterEliminar = new CuentaAdapter(contextoEliminar);
+
+        var resultadoEliminar = await adapterEliminar.EliminarAsync(cuenta.Id);
+        Assert.True(resultadoEliminar.IsSuccess);
+
+        using var contextoLectura = _fixture.CrearContexto();
+        var cuentaEliminada = await contextoLectura.Cuentas.FindAsync(cuenta.Id);
+
+        Assert.Null(cuentaEliminada);
+    }
+
+    [Fact]
+    public async Task EliminarAsync_CuentaNoExiste_DevuelveError()
+    {
+        using var contexto = _fixture.CrearContexto();
+        var adapter = new CuentaAdapter(contexto);
+
+        var resultadoEliminar = await adapter.EliminarAsync(9999);
+
+        Assert.Contains(resultadoEliminar.Errors, e => e.Message == "Cuenta no encontrada");
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    public async Task EliminarAsync_IdNoValido_DevuelveError(int id)
+    {
+        using var contexto = _fixture.CrearContexto();
+        var adapter = new CuentaAdapter(contexto);
+
+        var resultadoEliminar = await adapter.EliminarAsync(id);
+
+        Assert.Contains(resultadoEliminar.Errors, e => e.Message == "Id no válido");
+
+    }
 }
     
 

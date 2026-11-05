@@ -182,27 +182,45 @@ KC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\ResumenView.cs
 HH II) /QQ" (RR2 8
 HH5 6HH: ;
 HHh iHHm n
-II OO7 >OOP Wž
-LC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\DialogoTexto.cs
+II OO7 >OOP W¢
+PC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\PresupuestosView.cs
 
-  
+ )(
+. B  00? SHH" 6
+		, > # 5(
+  +$$ &&* 500U `
+5 H# 6
+] n! 2
 
- 
-- 2   $
-; A
-
- 
-J R- 5
-[ g, 8P
-      0 4   
-   +
- - 5  ; C
- 7 A &
- C N '
+ %
+ $ .$$ $
+'' '' 
+(( ((- .((3 4(
+.. 2++ )PP )__ )2
+00 22$ )77* /==. 3==_ d
+==> ?==C D
+==o p==t u
 
- 
+@@ +
 
- ‚
+@@4 :
+
+@@F G
+BB= FHHD M
+HH JJ$ -
+
+TT 6
+
+TT? E
+
+TTQ R
+VVN RXX- 1YY" &
+
+]] .
+
+]]7 =
+
+]]I J‚
 FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Opcion.cs
 
  
@@ -1228,45 +1246,27 @@ FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Dibujo.cs
 MM[ `PP6 ;
 OO PP( .
 TT -3 F
-YY [[ ¢
-PC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\PresupuestosView.cs
+YY [[ ž
+LC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\DialogoTexto.cs
 
- )(
-. B  00? SHH" 6
-		, > # 5(
-  +$$ &&* 500U `
-5 H# 6
-] n! 2
+  
 
- %
- $ .$$ $
-'' '' 
-(( ((- .((3 4(
-.. 2++ )PP )__ )2
-00 22$ )77* /==. 3==_ d
-==> ?==C D
-==o p==t u
+ 
+- 2   $
+; A
+
+ 
+J R- 5
+[ g, 8P
+      0 4   
+   +
+ - 5  ; C
+ 7 A &
+ C N '
 
-@@ +
+ 
 
-@@4 :
-
-@@F G
-BB= FHHD M
-HH JJ$ -
-
-TT 6
-
-TT? E
-
-TTQ R
-VVN RXX- 1YY" &
-
-]] .
-
-]]7 =
-
-]]I J£
+ £
 KC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\CuentasView.cs
 
  $F
@@ -1367,91 +1367,28 @@ FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Combos.cs
 C K # !
   ] e
   & ,
-, -T UÁ
-HC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\ChatView.cs
+, -T Uí
+sC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\MovimientoEntity.cs
 
- ! 
- # 
-¸¸ 
-, > ::& 84
-+ 4QQ [[ oo$ -
-±±$ - 
- ::R Y
-·· 
-+ <! 2
+ 
 
-% &
+		 
 
-( )
+ 
 
-"" "
-(( &
-¢¢ 
-«« !(
-** ,, 22 ::H P
-66 << (
-:: >> @@, 5DD= F
-DDU VDDZ [H
-MM # 22 66 "@@ DD 
-¸¸ 
-MM+ 0OO* /R
-MM7 @ %22 '660 9@@> GDDg pOO1 :
-¸¸ %
-MMG N	DDy €OO< C2
-OO QQ !RR' .UU0 7VV  
-YY << 
-³³ (
-YY( /[[ $\\* 1]] (
-bb . 7SS ^^ 
-dd ee$ *ff( .(
-ee mm ss4 :ssM S
-ff vv& 0
-gg hh- 2ss, 1
-hh qq/ :
-mm tt0 1vv 
-ss tt- .
-|| 55 II 6
-||# +~~" *! )
-€€  (
-‚‚ 
+ 
 
-‰‰ -@@ +`
+ 
 
-‰‰5 :
- 
-2 7
-ŽŽ 
-ŽŽ- 2
-•• 
-•• 
-—— 
+ $
 
-››% 4
- '
+ 
 
-žž% /
-ŽŽ "
+$ (
 
-   *
+ 
 
-  3 9
-
-  E F
-
-¦¦ -
-
-¦¦6 <0
-
-¦¦K L
-¨¨ 
-¨¨, -
-ªª 
-
-¯¯ #
-
-¯¯, 2
-
-¯¯> ?”
+   ”
 NC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\CategoriasView.cs
 
  '<
@@ -1602,28 +1539,91 @@ tC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven
 
  
  # '
- 1 4í
-sC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\MovimientoEntity.cs
+ 1 4Á
+HC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\ChatView.cs
 
- 
+ ! 
+ # 
+¸¸ 
+, > ::& 84
++ 4QQ [[ oo$ -
+±±$ - 
+ ::R Y
+·· 
++ <! 2
 
-		 
+% &
 
- 
+( )
 
- 
+"" "
+(( &
+¢¢ 
+«« !(
+** ,, 22 ::H P
+66 << (
+:: >> @@, 5DD= F
+DDU VDDZ [H
+MM # 22 66 "@@ DD 
+¸¸ 
+MM+ 0OO* /R
+MM7 @ %22 '660 9@@> GDDg pOO1 :
+¸¸ %
+MMG N	DDy €OO< C2
+OO QQ !RR' .UU0 7VV  
+YY << 
+³³ (
+YY( /[[ $\\* 1]] (
+bb . 7SS ^^ 
+dd ee$ *ff( .(
+ee mm ss4 :ssM S
+ff vv& 0
+gg hh- 2ss, 1
+hh qq/ :
+mm tt0 1vv 
+ss tt- .
+|| 55 II 6
+||# +~~" *! )
+€€  (
+‚‚ 
 
- 
+‰‰ -@@ +`
 
- $
+‰‰5 :
+ 
+2 7
+ŽŽ 
+ŽŽ- 2
+•• 
+•• 
+—— 
 
- 
+››% 4
+ '
 
-$ (
+žž% /
+ŽŽ "
 
- 
+   *
 
-   ­
+  3 9
+
+  E F
+
+¦¦ -
+
+¦¦6 <0
+
+¦¦K L
+¨¨ 
+¨¨, -
+ªª 
+
+¯¯ #
+
+¯¯, 2
+
+¯¯> ?­
 oC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\CuentaEntity.cs
 
  
@@ -1719,22 +1719,33 @@ uC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven
 WW \\ +
 XX XX XX0 1
 YY  YY$ %
-\\ ^^ $–
-dC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IAsistenteServicio.cs
+\\ ^^ $µ
+qC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\CuentaAdapter.cs
 
- #
+ 
++ 20 7d
+% -! )$$ 22 33 AA! )MM NN __! )nn" *
 
-
-
- '
+ -<
+5 ; < B   $!! #"" "2
+     !! "" 
 
-
-
-/ 7
+** *(
+**2 8,, 111 755 
+11 22( 455  
 
-
-
-@ G¦
+:: +
+::0 2<< AA< >
+AA CC MM$ 0
+
+XX& 7
+XX< >ZZ __< >
+__ aa ff+ 7
+ff hh/ 5
+
+ll, =
+nn oo #
+oo qq/ 6¦
 tC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\CategoriaAdapter.cs
 
  
@@ -1808,36 +1819,7 @@ fC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\
 
 C G
 
-M P
-eC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IMovimientoServicio.cs
-
-		 $
-
- +
-
-0 8
-
-> I
-
-S Z
-
-d i
-
-r }
-
-# 8
-
-= E
-
-# 5
-
-: >
-
-D G
-
- 
-
-# %‹
+M P‹
 aC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\ICuentaServicio.cs
 
 		  
@@ -1885,33 +1867,22 @@ dC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\
 
  
 
-# %µ
-qC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\CuentaAdapter.cs
+# %–
+dC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IAsistenteServicio.cs
 
- 
-+ 20 7d
-% -! )$$ 22 33 AA! )MM NN __! )nn" *
+ #
 
- -<
-5 ; < B   $!! #"" "2
-     !! "" 
+
+
+ '
 
-** *(
-**2 8,, 111 755 
-11 22( 455  
+
+
+/ 7
 
-:: +
-::0 2<< AA< >
-AA CC MM$ 0
-
-XX& 7
-XX< >ZZ __< >
-__ aa ff+ 7
-ff hh/ 5
-
-ll, =
-nn oo #
-oo qq/ 6û
+
+
+@ Gû
 iC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driven\IPresupuestoPersistencia.cs
 
 		 )
@@ -2062,7 +2033,36 @@ PC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Model\Cuenta.c
   0 :
   
 ) . 
-; ? ¯
+; ? 
+eC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IMovimientoServicio.cs
+
+		 $
+
+ +
+
+0 8
+
+> I
+
+S Z
+
+d i
+
+r }
+
+# 8
+
+= E
+
+# 5
+
+: >
+
+D G
+
+ 
+
+# %¯
 _C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Model\Comun\DomainException.cs
 
  

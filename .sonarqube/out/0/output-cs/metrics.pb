@@ -12,10 +12,8 @@ GC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Tarjeta.cs! 	8
 MC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\SelectorFecha.cs 8j#r9	 !$&'(*+,-.023456789:<=>?@BCDEFHIJKLMxÇ	 $'(*.0234>?DEJKŸ
 KC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\ResumenView.cs/ 8
 jW`rK	
- !"$&'()+-./0245679;<=>@BCDEGHIKLNOQRTVXY[\]^abcdexÇ.!"$&(+-/2469;=@BDGHKLNOQRTVXY[\]^abÜ
-LC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\DialogoTexto.cs 8jr	
- !"xÇ
- Q
+ !"$&'()+-./0245679;<=>@BCDEGHIKLNOQRTVXY[\]^abcdexÇ.!"$&(+-/2469;=@BDGHKLNOQRTVXY[\]^ab÷
+PC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\PresupuestosView.cs# 8jSrM	 !"$&'()+,./02345789:;=>@ABCDEFHJKLMOPQTUVWXYZ[]^_`abxÇ%!$&'(+024789:;=BDEHJLOPVXY_Q
 FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Opcion.csjrß
 OC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\MovimientosView.cs5 8j=rÇ	
  !"$%&')+,-.01345789:;>?@BCEFGIJKLNPQRTUVXY[\^_`abcdfghijlnopqstuvxyz{|}~ÄÇÉÑÖÜàâäãçéèêëíx
@@ -37,16 +35,18 @@ EC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Filas.cs (8(j"
 FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Estilo.cs™ &8sj%+.1nàâ˛ˇá◊ˇêrΩ	
  !"#&'),/23456789;<=>?@ABDEFGHIJKLMNOPQRSTUVWXZ[\]_`bcdefghijklopqrsuvwxyz{}~ÄÅÇÉÑÖÜäãåçéèëíìïñóòôõùûü†°¢£§•¶ß®©´¨≠ÆØ∞±≤¥∂∑∏π∫ºæø¿¡¬ƒ≈∆»… ÀÕŒœ–“”’◊ÿŸ⁄€›ﬂ‡·„‰ÂÊËÈÍÏÓÚÛÙıˆ¯˘˙˚¸ÄÅÇÉÑÖàâäãåçéèêëíìïñòöõúùûü°¢£•¶ß©´¨≠Æ∞±≥¥µ∂∑∏π∫ªºΩæø¿¡¬ƒ≈∆«… ÀÕŒ–—“”‘’ÿŸ⁄€›ﬁﬂ‡‚„‰ÊÁËÈÎÌÓÔÒÚÙıˆ˜¯˘˙˚¸˝ÄÅÇÉÑÖáàâäãåçéëíìîïñòôöõúùûü†°£§•¶xJÇ¡ !"#&'467;=>?@FGHIJKLMNOPQRSTUVWXZ[\]_defghijkloqwyÅÉåéëìñóòõùü†°£•¶ß≠∂∑π∫ºæø¡ƒ≈ÀÕ“”’◊ÿ⁄›ﬂ·„ÂËÈÏÓÙı˙˚ÇÉÑÖàâäãåçéèêëíìïòúû°¢£•¶ß©´≠∞≥µ∑∏πø≈∆«…ÕŒ–“”‘ÿŸ⁄€›ﬁﬂ‰ÊËÎÌÔˆ¯˙ÇÑáàäãåìïòöúû†£»
 FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Dibujo.cs 8j28=XrL	
- !#$%&')*+,-/034569:;>?@BCDEGHIJKMNOPQRTUVWY[\]^_abcxÇ!#%&)*+,-/569:@BDEGHIOPQV[]a÷
-PC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\PresupuestosView.cs# 8jSrM	 !"$&'()+,./02345789:;=>@ABCDEFHJKLMOPQTUVWXYZ[]^_`abxÇ%!$&'(+024789:;=BDEHJLOPVXY_‹
+ !#$%&')*+,-/034569:;>?@BCDEGHIJKMNOPQRTUVWY[\]^_abcxÇ!#%&)*+,-/569:@BDEGHIOPQV[]aÜ
+LC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\DialogoTexto.cs 8jr	
+ !"xÇ
+ ‹
 KC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\CuentasView.cs( 8rU
  !"$%&')*+,.01234689:<=>?ABCDFGHIJKMOPQRTVWXYZ\]^_`acefghijkx	Ç+"$&)*,.026:<>ABCHJMOQTVX^`ceg√
 IC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Consultas.cs 8jrB	
  !"#%&'(*+-.01245679;<=?@ABDEFGHIJKLMOPQx	Ç# !"%'*+-246;=?ADFGHIJKOu
 FC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\Combos.cs 8jr
 xÇ
-Û
-HC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\ChatView.csC 8j4alàí•∂rΩ	 "#$%&()*,-./125689:<>?@ABCDEFGHIJKMNOQRSUVWYZ[\]^_bcdefghjmopqstvwyz|}~ÄÇÉÑÖÜâäãåçéèêëìïóòöõùû†°¢£¶ß®©™´¨≠Ø∞±≤≥¥∑∏π∫ªºxÇN$%*,.1256:<>@DIQRSUV[\]^ghjmoqstvy~ÄÇÑçéïó¢®™´±≥∑∏π—
+ö
+sC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\MovimientoEntity.cs 8jr	 !Ç —
 NC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\CategoriasView.cs 8jrI
  !"#$&'(*+,./01345678:;<>?@ACDEGHIJKLMOQRSTUWXYZ[\xÇ& !"(*+,.03456<>@CDIJLOQSY®
 KC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\BurbujaChat.cs 8	jr1
@@ -64,8 +64,8 @@ oC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven
 Ç†
 rC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Mapper\CategoriaMapper.cs 8r	
 Çê
-tC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\PresupuestoEntity.cs 8jr	ö
-sC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\MovimientoEntity.cs 8jr	 !Ç à
+tC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\PresupuestoEntity.cs 8jr	Û
+HC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\UI\ChatView.csC 8j4alàí•∂rΩ	 "#$%&()*,-./125689:<>?@ABCDEFGHIJKMNOQRSUVWYZ[\]^_bcdefghjmopqstvwyz|}~ÄÇÉÑÖÜâäãåçéèêëìïóòöõùû†°¢£¶ß®©™´¨≠Ø∞±≤≥¥∑∏π∫ªºxÇN$%*,.1256:<>@DIQRSUV[\]^ghjmoqstvy~ÄÇÑçéïó¢®™´±≥∑∏πà
 oC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\CuentaEntity.cs 8r	Ç	ç
 rC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Entity\CategoriaEntity.cs 8jr
 	
@@ -75,21 +75,19 @@ sC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven
 r
 Çﬁ
 vC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\PresupuestoAdapter.cs 8j0Hr;	 "#$%&')+,-.135689:;<>@ACDEFIJKLNOPxÇ$&)+-135:;>@EFIKNÔ
-uC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\MovimientoAdapter.cs 8rI	 "#$%&')+,-.01346789:;=?@ABDFGIJKLMNPRSUVWXYZ\^_`xÇ $&)+-0138:=?ADFKLMPRWXY\^s
-dC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IAsistenteServicio.csr		
-€
+uC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\MovimientoAdapter.cs 8rI	 "#$%&')+,-.01346789:;=?@ABDFGIJKLMNPRSUVWXYZ\^_`xÇ $&)+-0138:=?ADFKLMPRWXY\^˚
+qC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\CuentaAdapter.cs% 8rU	 !"$&'*+,-./123578:;<=>?ACDEFIJMNOPQRSUVXYZ[\]_abcdfhjlmnoqrsxÇ$ !"$&,.12357<>ACEMNRUZ\_acfhnoq€
 tC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\CategoriaAdapter.cs 8	r=	!"$%&'()+-./024679:;<=>@BCDEGIJLMNPRSVxÇ!&(+-/246;=@BDGINPRµ
 tC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\AsistenteAdapter.cs 8r$
  !"#$&'()*+,./xÇ "#&*+x
 fC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IPresupuestoServicio.csr	
-x
-eC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IMovimientoServicio.csr	
-v
+v
 aC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\ICuentaServicio.csr	
 w
 dC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\ICategoriaServicio.csr	
-˚
-qC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Infrastructure\Driven\Database\Adapter\CuentaAdapter.cs% 8rU	 !"$&'*+,-./123578:;<=>?ACDEFIJMNOPQRSUVXYZ[\]_abcdfhjlmnoqrsxÇ$ !"$&,.12357<>ACEMNRUZ\_acfhnoq|
+s
+dC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IAsistenteServicio.csr		
+|
 iC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driven\IPresupuestoPersistencia.csr	
 |
 hC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driven\IMovimientoPersistencia.csr	
@@ -106,7 +104,9 @@ TC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Model\Movimien
 Çz
 PC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Model\Cuenta.cs 	8	r	
 Ç
-s
+x
+eC:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Ports\Driving\IMovimientoServicio.csr	
+s
 _C:\Users\pablo\source\repos\App_Escritorio\App_Escritorio\Domain\Model\Comun\DomainException.cs 8r
 	
 y
